@@ -9,7 +9,7 @@ import entities.enums.OrderStatus;
 
 public class Order {
 
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     private Date moment;
     private OrderStatus status;
@@ -85,10 +85,8 @@ public class Order {
         for (OrderItem item : items) {
             sb.append(item + "\n");
         }
-        sb.append("Total price: ");
-        sb.append(String.format(".2f", total()));
-
-
+        sb.append("Total price: $");
+        sb.append(String.format("%.2f", total()));
 
         return sb.toString();
 
